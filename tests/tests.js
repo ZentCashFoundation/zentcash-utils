@@ -104,7 +104,7 @@ describe('Wallets', () => {
   const rawSeed = 'dd0c02d3202634821b4d9d91b63d919725f5c3e97e803f3512e52fb0dc2aab0c'
   const rawMnemonic = 'teeming taken piano ramped vegan jazz earth enjoy suture quick lied awkward ferry python often exotic cube hexagon ionic joyous cage abnormal hull jigsaw lied'
   const testAddress = 'Ze527LxFXCdVcFVhtx95KxYCL7exsHrDuSwRzzDQziGqB8uiEMEKidNY57oRvR1Ge23qoDeVjzsRYV5q28MYJ98e1KDFCapCP'
-  const testAddressRaw = '9df6ee01f71e440f9a5aab08dbdab0f4f36bba813660a0600f109b1371dc53be33f23c99f0ba225065e1b9c2e43165b3e41f10fcb768853126dfa7e612a3df2deb332492cc073a66'
+  const testAddressRaw = 'c322f71e440f9a5aab08dbdab0f4f36bba813660a0600f109b1371dc53be33f23c99f0ba225065e1b9c2e43165b3e41f10fcb768853126dfa7e612a3df2deb3324921662d1c8'
 
   describe('Mnemonics', () => {
     it('address from mnemonic phrase has matching seed', () => {
@@ -159,25 +159,25 @@ describe('Wallets', () => {
 
   describe('Message Signing', () => {
     it('sign a string message', () => {
-      const signature = cnUtil.signMessage('this is a test message', 'Ze527LxFXCdVcFVhtx95KxYCL7exsHrDuSwRzzDQziGqB8uiEMEKidNY57oRvR1Ge23qoDeVjzsRYV5q28MYJ98e1KDFCapCP', 'd4c7e338d7efe0468b6498dd2f96620fad6b103d1a70dea76bab4de9db9c0a0b')
+      const signature = cnUtil.signMessage('this is a test message', 'Ze34c51hS35gwX4dem8hSNXhZGUGtf87eGiyF9rnFAZ5H5K98szgHSYXCxe3xkzBsS63YwNKmeBCraY8FTik1AtK1fU4HBmb8', 'f0e3388f83025cd5e8a86ab2fc2efc817ef5bcc0b85820886fa19f5fc4cbe505')
 
       assert((signature))
     })
 
     it('sign an object-based message', () => {
-      const signature = cnUtil.signMessage({ mac: 'deadbeef', amount: 10 }, 'Ze527LxFXCdVcFVhtx95KxYCL7exsHrDuSwRzzDQziGqB8uiEMEKidNY57oRvR1Ge23qoDeVjzsRYV5q28MYJ98e1KDFCapCP', 'd4c7e338d7efe0468b6498dd2f96620fad6b103d1a70dea76bab4de9db9c0a0b')
+      const signature = cnUtil.signMessage({ mac: 'deadbeef', amount: 10 }, 'Ze34c51hS35gwX4dem8hSNXhZGUGtf87eGiyF9rnFAZ5H5K98szgHSYXCxe3xkzBsS63YwNKmeBCraY8FTik1AtK1fU4HBmb8', 'f0e3388f83025cd5e8a86ab2fc2efc817ef5bcc0b85820886fa19f5fc4cbe505')
 
       assert((signature))
     })
 
     it('verify signature - string message', () => {
-      const isValid = cnUtil.verifyMessageSignature('this is a test message', 'Ze527LxFXCdVcFVhtx95KxYCL7exsHrDuSwRzzDQziGqB8uiEMEKidNY57oRvR1Ge23qoDeVjzsRYV5q28MYJ98e1KDFCapCP', '9ef44c5b3ffe86e31b126e284227953bdb78714b40af4e43c66d4e4a72a3150096b2b8e6a974e5fbc5a6ed700381f5356e6f80ad0ca62b020382f37b00d4d401')
+      const isValid = cnUtil.verifyMessageSignature('this is a test message', 'Ze34c51hS35gwX4dem8hSNXhZGUGtf87eGiyF9rnFAZ5H5K98szgHSYXCxe3xkzBsS63YwNKmeBCraY8FTik1AtK1fU4HBmb8', 'ff2fe2b5936f8558fc79ede0bf42585683d68e707077a38a703f447e30d1060f1aec98c29a4ba838920b2211ad293a02ad2f837b561a7764f3d7e47236963808')
 
       assert(isValid)
     })
 
     it('verify signature - object-based message', () => {
-      const isValid = cnUtil.verifyMessageSignature({ mac: 'deadbeef', amount: 10 }, 'Ze527LxFXCdVcFVhtx95KxYCL7exsHrDuSwRzzDQziGqB8uiEMEKidNY57oRvR1Ge23qoDeVjzsRYV5q28MYJ98e1KDFCapCP', 'f111faac9365c62eaf016364e9db6ec50060f379e9b0e480ba1dc41993c3380f55a6f4b10bb3e1d18ee0aa139157ee657a451746e5f6358199a7425e4f65af0c')
+      const isValid = cnUtil.verifyMessageSignature({ mac: 'deadbeef', amount: 10 }, 'Ze34c51hS35gwX4dem8hSNXhZGUGtf87eGiyF9rnFAZ5H5K98szgHSYXCxe3xkzBsS63YwNKmeBCraY8FTik1AtK1fU4HBmb8', '57b32772110d25ee4bb832fe7b682d821419e04af3c87b69961a7f9d7a91b80f14a7e7222bfb13c7ca16e3f44b6dcfac7c56502f6a027221cbe0ddb8d45f0606')
 
       assert(isValid)
     })
