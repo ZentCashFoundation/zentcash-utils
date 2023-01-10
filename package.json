@@ -32,7 +32,7 @@
   ],
   "license": "GPL-3.0",
   "optionalDependencies": {
-    "zentcash-crypto": "https://github.com/ZentCashFoundation/zentcash-crypto#v3.1.4"
+    "zentcash-crypto": "^3.1.4"
   },
   "dependencies": {
     "crc": "^3.8.0",
